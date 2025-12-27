@@ -21,7 +21,7 @@ export default function Hero() {
             {/* LEFT TEXT */}
             <div>
               <h1 className="text-4xl md:text-5xl font-bold text-gray-800 leading-tight">
-                WELCOME TO <br /> SAHARA ORTHO
+               Fixing fractures, Restoring futures
               </h1>
 
               <p className="mt-6 max-w-xl text-gray-600 text-lg">
@@ -40,8 +40,7 @@ export default function Hero() {
                     Why Choose Sahara Ortho?
                   </h3>
                   <p className="text-sm leading-relaxed">
-                    We prioritize quality, precision, and trust in everything we
-                    manufacture.
+                    At Sahara Ortho, we prioritize quality, precision, and trust in everything we manufacture. As a leading manufacturer of orthopedic implants and instruments, we are committed to enhancing surgical outcomes and improving patient lives through innovation and reliability.
                   </p>
                 </div>
 
@@ -64,7 +63,7 @@ export default function Hero() {
                     {title}
                   </h4>
                   <p className="text-sm text-gray-600 mt-2">
-                    Premium orthopedic solutions designed for surgical excellence.
+                   We adhere to strict international standards and quality control at every stage—from raw material selection to final packaging—ensuring safe and effective orthopedic solutions.
                   </p>
                 </div>
               ))}
