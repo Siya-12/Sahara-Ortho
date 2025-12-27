@@ -23,15 +23,15 @@ export default function TopBar() {
     <i className="bi bi-whatsapp text-red-800"></i>
   </a>
 
-  <a href="https://linkedin.com/in/your-linkedin-id" target="_blank" className="hover:opacity-80 transition">
+  <a href="https://in.linkedin.com/in/sahara-ortho-65a6a9266" target="_blank" className="hover:opacity-80 transition">
     <i className="bi bi-linkedin text-red-800"></i>
   </a>
 
-  <a href="https://instagram.com/your-instagram-id" target="_blank" className="hover:opacity-80 transition">
+  <a href="https://www.instagram.com/sahara_ortho?igsh=bm84c3B1eTB6d3kw" target="_blank" className="hover:opacity-80 transition">
     <i className="bi bi-instagram text-red-800"></i>
   </a>
 
-  <a href="https://facebook.com/your-facebook-id" target="_blank" className="hover:opacity-80 transition">
+  <a href="https://www.facebook.com/share/1AWdeaWFAX/" target="_blank" className="hover:opacity-80 transition">
     <i className="bi bi-facebook text-red-800"></i>
   </a>
 </div>
