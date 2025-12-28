@@ -34,7 +34,7 @@ export default function Hero() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
 
               {/* Blue Card */}
-              <div className="sm:row-span-2 bg-primary text-white p-7 rounded-2xl shadow-xl flex flex-col justify-between">
+              <div className="sm:row-span-2 bg-gradient-to-br from-blue-600 via-blue-500 to-blue-400 text-white p-7 rounded-2xl shadow-xl flex flex-col justify-between">
                 <div>
                   <h3 className="text-2xl font-bold mb-4">
                     Why Choose Sahara Ortho?
