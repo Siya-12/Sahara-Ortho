@@ -38,7 +38,7 @@ export default function Navbar() {
         {/* Mobile Hamburger */}
         <button
           onClick={() => setOpen(!open)}
-          className="md:hidden text-2xl text-gray-700"
+          className="md:hidden text-2xl text-gray-700 bg-white"
         >
           ☰
         </button>

@@ -50,23 +50,33 @@ export default function Hero() {
               </div>
 
               {/* White Cards */}
-              {[
-                "Uncompromising Quality",
-                "Affordable Excellence",
-                "Wide Product Range",
-              ].map((title) => (
-                <div
-                  key={title}
-                  className="bg-white/90 backdrop-blur-md p-6 rounded-2xl shadow-lg"
-                >
-                  <h4 className="font-semibold text-gray-800">
-                    {title}
-                  </h4>
-                  <p className="text-sm text-gray-600 mt-2">
-                   We adhere to strict international standards and quality control at every stage—from raw material selection to final packaging—ensuring safe and effective orthopedic solutions.
-                  </p>
-                </div>
-              ))}
+{[
+  {
+    title: "Uncompromising Quality",
+    desc: "We adhere to strict international standards and rigorous quality control at every stage-from raw material selection to final packaging-ensuring safe and reliable orthopaedic solutions."
+  },
+  {
+    title: "Affordable Excellence",
+    desc: "We deliver premium-quality orthopaedic products at competitive prices, helping healthcare providers offer the best care without compromise."
+  },
+  {
+    title: "Wide Product Range",
+    desc: "From trauma implants to spine and hip replacement systems, we offer a comprehensive portfolio designed to support diverse surgical requirements."
+  }
+].map((item) => (
+  <div
+    key={item.title}
+    className="bg-white/90 backdrop-blur-md p-6 rounded-2xl shadow-lg"
+  >
+    <h4 className="font-semibold text-gray-800">
+      {item.title}
+    </h4>
+    <p className="text-sm text-gray-600 mt-2">
+      {item.desc}
+    </p>
+  </div>
+))}
+
             </div>
 
           </div>
