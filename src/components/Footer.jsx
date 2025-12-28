@@ -601,7 +601,7 @@ function Accordion({ title, children }) {
     <div className="border border-white/30 rounded-lg bg-primary text-white">
       <button
         onClick={() => setOpen(!open)}
-        className="w-full flex justify-between items-center px-4 py-3 text-sm font-medium text-gray-800"
+        className="bg-white w-full flex justify-between items-center px-4 py-3 text-sm font-medium text-gray-800"
       >
         {title}
         <ChevronDown

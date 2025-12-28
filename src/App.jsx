@@ -1,22 +1,11 @@
-// import Footer from "./components/Footer";
-// import TopBar from "./components/TopBar"
-// import Navbar from "./components/Navbar"
-// import Hero from "./components/Hero"
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import MainLayout from "./layouts/MainLayout";
 import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs";
+import Products from "./pages/Products";
+import Certificates from "./pages/Certificates";
+import ContactUs from "./pages/ContactUs";
 
-// export default function App() {
-//   return (
-//     <div className="w-full">
-//       <TopBar />
-//       <Navbar />
-//       <Hero />
-//       <Footer />
-//     </div>
-//   )
-// }
 
 function App() {
   return (
@@ -36,6 +25,33 @@ function App() {
           element={
             <MainLayout>
               <AboutUs />
+            </MainLayout>
+          }
+        />
+
+        <Route
+          path="/Products"
+          element={
+            <MainLayout>
+              <Products />
+            </MainLayout>
+          }
+        />
+
+        <Route
+          path="/certifications"
+          element={
+            <MainLayout>
+              <Certificates />
+            </MainLayout>
+          }
+        />
+
+        <Route
+          path="/contact"
+          element={
+            <MainLayout>
+              <ContactUs />
             </MainLayout>
           }
         />
