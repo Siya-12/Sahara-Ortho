@@ -7,7 +7,7 @@ const Home = () => {
     <>
       <Hero />
        <BrochureCTA />
-       <Hero/>
+      
       {/* more home-only sections */}
     </>
   );
