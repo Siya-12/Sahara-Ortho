@@ -24,7 +24,7 @@ export default function ContactUs() {
             name="name"
             placeholder="Your Name"
             required
-            className="bg-white w-full p-3 border-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="bg-white text-black w-full p-3 border-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
 
           <input
@@ -32,7 +32,7 @@ export default function ContactUs() {
             name="email"
             placeholder="Your Email"
             required
-            className="bg-white w-full p-3 border-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="bg-white text-black w-full p-3 border-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
 
           <textarea
@@ -40,7 +40,7 @@ export default function ContactUs() {
             placeholder="Your Message"
             rows="5"
             required
-            className="bg-white w-full p-3 border-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="bg-white text-black w-full p-3 border-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
 
           <button
