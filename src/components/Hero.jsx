@@ -44,7 +44,7 @@ export default function Hero() {
                   </p>
                 </div>
 
-                <button className="mt-6 bg-white text-primary px-5 py-2 rounded-lg font-medium w-fit hover:bg-gray-100 transition">
+                <button className="mt-6 bg-gray-600 text-primary px-5 py-2 rounded-lg font-medium w-fit hover:bg-gray-800 transition">
                   Learn More →
                 </button>
               </div>
