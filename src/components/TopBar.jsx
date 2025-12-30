@@ -1,6 +1,6 @@
 export default function TopBar() {
   return (
-    <div className="bg-gradient-to-br from-blue-600 via-blue-500 to-blue-400 text-white text-sm">
+    <div className="bg-gradient-to-br from-blue-600 via-blue-900 to-blue-400 text-white text-sm">
       {/* Reduced horizontal padding */}
       <div className="w-full px-6 lg:px-10 py-2 flex flex-col md:flex-row md:items-center md:justify-between gap-2">
         

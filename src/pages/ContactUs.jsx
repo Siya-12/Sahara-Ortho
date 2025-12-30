@@ -35,6 +35,14 @@ export default function ContactUs() {
             className="bg-white text-black w-full p-3 border-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
 
+          <input
+            type="phone"
+            name="phone"
+            placeholder="Your Contact no."
+            required
+            className="bg-white text-black w-full p-3 border-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+
           <textarea
             name="message"
             placeholder="Your Message"
@@ -72,7 +80,7 @@ export default function ContactUs() {
           </p>
 
           <p className="text-gray-700">
-            📞 <strong>Phone:</strong> +91 87002 81458
+            📞 <strong>Phone:</strong>   +91 8700281458 <br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +91 9350243968
           </p>
 
           <p className="text-gray-700">

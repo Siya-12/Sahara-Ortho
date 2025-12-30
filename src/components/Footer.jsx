@@ -451,7 +451,7 @@ import logo from "../assets/img/logo.jpg";
 
 export default function Footer() {
   return (
-    <footer className="bg-gradient-to-br from-blue-600 via-blue-500 to-blue-400 text-white">
+    <footer className="bg-gradient-to-br from-blue-600 via-blue-900 to-blue-500 text-white">
 
       {/* ================= MOBILE FOOTER ================= */}
       <div className="md:hidden max-w-md mx-auto px-4 py-10">
@@ -489,10 +489,16 @@ export default function Footer() {
         {/* Accordions */}
         <div className="mt-8 space-y-4">
           <Accordion title="Our Products">
-               <p>Ortho Rehab Products</p>
-            <p>Orthopaedic Supports</p>
-            <p>Surgical Products</p>
-            <p>Post-Operative Aids</p>
+              <p>Bone Plates</p>
+            <p>Bone Nails</p>
+            <p>Bone Screws</p>
+             <p>Instruments</p>
+            <p>Illizarov</p>
+            <p>Jess Systems</p>
+             <p>Wires, pins and rods</p>
+            <p>Spinal Implants</p>
+            <p>Maxillofacial</p>
+            
            
           </Accordion>
 
@@ -552,10 +558,15 @@ Delhi-110089
 
           {/* Products */}
           <FooterColumn title="Our Products">
-            <FooterLink text="Ortho Rehab Products" />
-            <FooterLink text="Orthopaedic Supports" />
-            <FooterLink text="Surgical Products" />
-            <FooterLink text="Post-Operative Aids" />
+            <FooterLink text="Bone Plates" />
+            <FooterLink text="Bone Nails" />
+            <FooterLink text="Bone Screws" />
+            <FooterLink text="Instruments" />
+            <FooterLink text="Illizarov" />
+            <FooterLink text="Jess Systems" />
+            <FooterLink text="Wires, Pins and Rods" />
+            <FooterLink text="Spinal Implants" />
+            <FooterLink text="Maxillofacial" />
           </FooterColumn>
 
           {/* Links */}
