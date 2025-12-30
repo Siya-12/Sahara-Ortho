@@ -5,7 +5,6 @@ import AboutUs from "./pages/AboutUs";
 import Products from "./pages/Products";
 import Certificates from "./pages/Certificates";
 import ContactUs from "./pages/ContactUs";
-// import WhatsAppFloat from "./components/WhatsAppFloat";
 
 
 function App() {
