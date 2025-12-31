@@ -5,6 +5,7 @@ import AboutUs from "./pages/AboutUs";
 import Products from "./pages/Products";
 import Certificates from "./pages/Certificates";
 import ContactUs from "./pages/ContactUs";
+import ProductCategory from "./pages/ProductCategory";
 
 
 function App() {
@@ -28,19 +29,19 @@ function App() {
             </MainLayout>
           }
         />
-          <Route
+          {/* <Route
           path="/products"
           element={
             <MainLayout>
               <Products />
             </MainLayout>
           }
-        />
-{/* 
+        /> */}
+
         <Route element={<MainLayout />}>
           <Route path="/products" element={<Products />} />
           <Route path="/products/:category" element={<ProductCategory />} />
-        </Route> */}
+        </Route>
 
         <Route
           path="/certifications"

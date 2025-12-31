@@ -1,42 +1,91 @@
-// import { useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
-// const images = [
-// //   { name: "Product 1", img: "/images/p1.jpg" },
-// //   { name: "Product 2", img: "/images/p2.jpg" },
-// //   { name: "Product 3", img: "/images/p3.jpg" },
-// //   { name: "Product 4", img: "/images/p4.jpg" },
-// ];
+export default function ProductCategory() {
+  const { category } = useParams();
 
-// export default function ProductCategory() {
-//   const { category } = useParams();
+  const productData = {
+    "bone-plates": [
+      { img: "/products/facial.png", title: "LCP Plates" },
+      { img: "/products/plates/dcp.png", title: "DCP Plates" },
+      { img: "/products/plates/t-plate.png", title: "T Plates" },
+    ],
 
-//   return (
-//     <div className="max-w-7xl mx-auto px-6 py-12">
-//       <h2 className="text-3xl font-bold text-center capitalize mb-10">
-//         {category.replace("-", " ")}
-//       </h2>
+    "bone-nails": [
+      { img: "/products/nails/im-nail.png", title: "IM Nail" },
+      { img: "/products/nails/elastic.png", title: "Elastic Nail" },
+    ],
 
-//       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
-//         {images.map((item, index) => (
-//           <div
-//             key={index}
-//             className="relative group rounded-xl overflow-hidden shadow-lg"
-//           >
-//             <img
-//               src={item.img}
-//               alt={item.name}
-//               className="w-full h-60 object-cover"
-//             />
+    "bone-screws": [
+      { img: "/products/screws/cortical.png", title: "Cortical Screws" },
+      { img: "/products/screws/cancellous.png", title: "Cancellous Screws" },
+    ],
+  };
 
-//             {/* Hover Overlay */}
-//             <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
-//               <p className="text-white text-lg font-semibold">
-//                 {item.name}
-//               </p>
-//             </div>
-//           </div>
-//         ))}
-//       </div>
-//     </div>
-//   );
-// }
+  const items = productData[category] || [];
+
+  return (
+    <section className="min-h-screen bg-gradient-to-br from-slate-200 to-cyan-100 px-6 py-16">
+
+      {/* Heading */}
+      <h1
+        className="text-center text-4xl md:text-5xl font-bold mb-14
+        bg-clip-text text-transparent font-changa
+        bg-gradient-to-r from-red-800 via-blue-500 to-red-900"
+      >
+        {category.replace(/-/g, " ").toUpperCase()}
+      </h1>
+
+      {/* Cards */}
+      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+        {items.map((item) => (
+          <div
+            key={item.title}
+            className="bg-white rounded-2xl shadow-lg hover:shadow-2xl
+            transition duration-300 p-5"
+          >
+            {/* <img
+              src={item.img}
+              alt={item.title}
+              className="rounded-xl w-full h-52 object-cover"
+            />
+
+            <p
+              className="mt-4 text-center text-gray-700 font-medium"
+              style={{ fontFamily: "Merriweather, sans-serif" }}
+            >
+              {item.title}
+            </p> */}
+            <div className="relative group overflow-hidden rounded-xl">
+
+  {/* Image */}
+  <img
+    src={item.img}
+    alt={item.title}
+    className="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-110"
+  />
+
+  {/* Hover Overlay */}
+  <div
+   className="absolute inset-0
+  flex items-center justify-center
+  opacity-0 group-hover:opacity-100
+  transition duration-300"
+  >
+    <p
+      className="text-black text-xl font-semibold tracking-wide
+      translate-y-4 group-hover:translate-y-0
+      transition duration-300"
+      style={{ fontFamily: "Merriweather, sans-serif" }}
+    >
+      {item.title}
+    </p>
+  </div>
+
+</div>
+
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}

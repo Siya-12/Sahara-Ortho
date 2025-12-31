@@ -58,7 +58,10 @@ export default function Products() {
         {products.map((cert) => (
           <div
             key={cert.title}
-            onClick={() => navigate(`/products/${cert.title}`)}
+            onClick={() =>
+  navigate(`/products/${cert.title.toLowerCase().replace(/\s/g, "-")}`)
+}
+
             className="bg-white rounded-2xl shadow-lg hover:shadow-2xl
             transition duration-300 p-5"
           >
