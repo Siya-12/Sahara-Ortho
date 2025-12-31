@@ -21,6 +21,7 @@ module.exports = {
       fontFamily: {
         merri: ["Merriweather", "serif"],
         changa: ["'Changa One'", "cursive"],
+       dmserif: ["DM Serif Text", "serif"],
       },
     },
   },

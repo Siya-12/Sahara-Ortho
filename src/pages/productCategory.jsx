@@ -43,18 +43,6 @@ export default function ProductCategory() {
             className="bg-white rounded-2xl shadow-lg hover:shadow-2xl
             transition duration-300 p-5"
           >
-            {/* <img
-              src={item.img}
-              alt={item.title}
-              className="rounded-xl w-full h-52 object-cover"
-            />
-
-            <p
-              className="mt-4 text-center text-gray-700 font-medium"
-              style={{ fontFamily: "Merriweather, sans-serif" }}
-            >
-              {item.title}
-            </p> */}
             <div className="relative group overflow-hidden rounded-xl">
 
   {/* Image */}
@@ -67,21 +55,28 @@ export default function ProductCategory() {
   {/* Hover Overlay */}
   <div
    className="absolute inset-0
-  flex items-center justify-center
-  opacity-0 group-hover:opacity-100
-  transition duration-300"
+      flex items-center justify-center
+      bg-black/50
+      opacity-0 group-hover:opacity-100
+      transition duration-500"
   >
     <p
-      className="text-black text-xl font-semibold tracking-wide
+      className="text-white text-xl font-semibold tracking-wide
       translate-y-4 group-hover:translate-y-0
-      transition duration-300"
-      style={{ fontFamily: "Merriweather, sans-serif" }}
+      transition duration-500 font-dmserif"
+      // style={{ fontFamily: "Merriweather, sans-serif" }}
     >
       {item.title}
     </p>
   </div>
 
 </div>
+{/* Title below image (Mobile only) */}
+  <p
+    className="mt-3 text-2xl text-center text-gray-700 font-medium block md:hidden font-extrabold font-dmserif"
+  >
+    {item.title}
+  </p>
 
           </div>
         ))}
