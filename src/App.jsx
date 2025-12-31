@@ -28,15 +28,19 @@ function App() {
             </MainLayout>
           }
         />
-
-        <Route
-          path="/Products"
+          <Route
+          path="/products"
           element={
             <MainLayout>
               <Products />
             </MainLayout>
           }
         />
+{/* 
+        <Route element={<MainLayout />}>
+          <Route path="/products" element={<Products />} />
+          <Route path="/products/:category" element={<ProductCategory />} />
+        </Route> */}
 
         <Route
           path="/certifications"

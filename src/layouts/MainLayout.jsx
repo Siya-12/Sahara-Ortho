@@ -2,6 +2,7 @@ import Topbar from "../components/TopBar";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import WhatsAppFloat from "../components/WhatsAppFloat";
+// import { Outlet } from "react-router-dom";
 
 const MainLayout = ({ children }) => {
   return (
@@ -9,8 +10,9 @@ const MainLayout = ({ children }) => {
       <Topbar />
       <Navbar />
       
-      <main>
+      <main className="min-h-screen">
         {children}
+         {/* <Outlet /> */}
       </main>
 
       <Footer />
