@@ -42,16 +42,16 @@ export default function Products() {
   ];
   const navigate = useNavigate();
   return (
-    <section className="min-h-[60vh] md:min-h-screen px-6 py-8 md:py-16 bg-gradient-to-br from-slate-200 to-cyan-100 bg-cover bg-no-repeat md:bg-center md:bg-cover md:bg-no-repeat" style={{backgroundImage:`url(${ProductBg})`}}>
+    <section className="min-h-[60vh] md:min-h-screen px-6 py-8 md:py-16 bg-cover bg-no-repeat md:bg-center md:bg-cover md:bg-no-repeat" style={{backgroundImage:`url(${ProductBg})`}}>
       
       {/* Heading */}
       <h1
         className="text-center text-4xl md:text-5xl font-bold mb-6 md:mb-14
          bg-clip-text text-transparent font-changa
-    bg-gradient-to-r from-red-800 via-blue-500 to-red-900
+    bg-gradient-to-r from-gray-500 via-gray-900 to-gray-700
     bg-clip-border text-cyan"
       >
-        PRODUCTS
+       OUR PRODUCTS
       </h1>
 
       {/* Cards */}
