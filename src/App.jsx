@@ -6,11 +6,14 @@ import Products from "./pages/Products";
 import Certificates from "./pages/Certificates";
 import ContactUs from "./pages/ContactUs";
 import ProductCategory from "./pages/ProductCategory";
+import ScrollToTop from "./components/ScrollToTop";
+// import RoutesComponent from "./RoutesComponent"; // or your Routes
 
 
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route
           path="/"

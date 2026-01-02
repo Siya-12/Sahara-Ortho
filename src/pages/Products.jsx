@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import ProductBg from "../assets/img/bg-product.png"
 
 export default function Products() {
   const products = [
@@ -28,7 +29,7 @@ export default function Products() {
     },
     {
       img: "/products/wireRodPin.png",
-      title: "Wires, Pins and Rods",
+      title: "Wires,Pins & Rods",
     },
     {
       img: "/products/spinal.png",
@@ -41,11 +42,11 @@ export default function Products() {
   ];
   const navigate = useNavigate();
   return (
-    <section className="min-h-screen bg-gradient-to-br from-slate-200 to-cyan-100 px-6 py-16">
+    <section className="min-h-[60vh] md:min-h-screen px-6 py-8 md:py-16 bg-gradient-to-br from-slate-200 to-cyan-100 bg-cover bg-no-repeat md:bg-center md:bg-cover md:bg-no-repeat" style={{backgroundImage:`url(${ProductBg})`}}>
       
       {/* Heading */}
       <h1
-        className="text-center text-4xl md:text-5xl font-bold mb-14
+        className="text-center text-4xl md:text-5xl font-bold mb-6 md:mb-14
          bg-clip-text text-transparent font-changa
     bg-gradient-to-r from-red-800 via-blue-500 to-red-900
     bg-clip-border text-cyan"
@@ -54,7 +55,7 @@ export default function Products() {
       </h1>
 
       {/* Cards */}
-      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+      <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-3 gap-8">
         {products.map((cert) => (
           <div
             key={cert.title}
@@ -63,12 +64,20 @@ export default function Products() {
 }
 
             className="bg-white rounded-2xl shadow-lg hover:shadow-2xl
-            transition duration-300 p-5"
+            transition duration-300 p-3  
+            
+  last:col-span-2
+  last:max-w-[180px]
+  last:mx-auto
+
+  md:last:col-span-1
+  md:last:max-w-none
+  md:last:mx-0"
           >
             <img
               src={cert.img}
               alt={cert.title}
-              className="rounded-xl w-full h-52 object-cover"
+              className="rounded-xl w-full h-46 object-content"
             />
 
             <p

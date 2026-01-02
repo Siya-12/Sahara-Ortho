@@ -1,3 +1,5 @@
+import CertBg from "../assets/img/bg-cert.png";
+
 export default function Certification() {
   const certificates = [
     {
@@ -15,14 +17,12 @@ export default function Certification() {
   ];
 
   return (
-    <section className="min-h-screen bg-gradient-to-br from-slate-200 to-cyan-100 px-6 py-16">
+    <section className="min-h-[60vh] md:min-h-screen bg-gradient-to-br from-slate-200 to-cyan-100 px-6 py-8 md:py-16" style={{ backgroundImage:`url(${CertBg})`}}>
       
       {/* Heading */}
       <h1
-        className="text-center text-4xl md:text-5xl font-bold mb-14
-         bg-clip-text text-transparent font-changa
-    bg-gradient-to-r from-red-800 via-blue-500 to-red-900
-    bg-clip-border text-cyan"
+        className="text-center text-4xl md:text-5xl font-bold mb-6 md:mb-14
+         bg-clip-text font-changa text-transparent bg-gradient-to-r from-gray-400 via-gray-800 to-gray-400 bg-clip-border"
       >
         CERTIFICATIONS
       </h1>
@@ -33,7 +33,7 @@ export default function Certification() {
           <div
             key={index}
             className="bg-white rounded-2xl shadow-lg hover:shadow-2xl
-            transition duration-300 p-5"
+            transition duration-300 p-5 pb-8 md:pb-5 pt-8"
           >
             <img
               src={cert.img}
@@ -42,7 +42,7 @@ export default function Certification() {
             />
 
             <p
-              className="pt-4 mt-4 text-center text-gray-700 font-medium text-bold"
+              className="pt-4 mt-4 text-center text-gray-700 font-extrabold"
               style={{ fontFamily: "Merriweather, sans-serif" }}
             >
               {cert.title}

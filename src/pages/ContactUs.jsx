@@ -1,10 +1,11 @@
+import ContactBg from "../assets/img/bg-contact.png";
 export default function ContactUs() {
   return (
-    <section className="bg-[#eaf6fa] py-16">
+    <section className="min-h-[60vh] md:min-h-screen px-6 py-8 md:py-16" style={{backgroundImage:`url(${ContactBg})`}}>
       
       {/* Heading */}
       <h2
-        className="text-center text-5xl md:text-6xl font-bold text-blue-600 mb-12 font-changa"
+        className="text-center text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-400 via-blue-800 to-blue-400 text-transparent bg-clip-border bg-clip-text mb-6 md:mb-12 font-changa"
 
       >
         CONTACT US
