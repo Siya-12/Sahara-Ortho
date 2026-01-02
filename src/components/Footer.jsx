@@ -448,6 +448,7 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import logo from "../assets/img/logo.jpg";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -503,12 +504,13 @@ export default function Footer() {
           </Accordion>
 
           <Accordion title="Quick Links">
-            <p>Home</p>
-            <p>About Us</p>
-            <p>Certifications</p>
-            <p>Contact Us</p>
-            <p>Privacy Policy</p>
-            <p>Terms & Conditions</p>
+           <Link to="/" className="block text-white"> Home</Link>
+           <Link to="/about" className="block text-white"> About Us</Link>
+            <Link to="/products" className="block text-white"> Our Products</Link>
+            <Link to="/certifications" className="block text-white">Certifications</Link>
+            <Link to="/contact" className="block text-white">Contact Us</Link>
+            {/* <Link to="/products" className="block text-white">Privacy Policy</Link>
+            <Link to="/products" className="block text-white">Terms & Conditions</Link> */}
           </Accordion>
 
           <Accordion title="Company Address">
@@ -571,12 +573,13 @@ Delhi-110089
 
           {/* Links */}
           <FooterColumn title="Quick Links">
-            <FooterLink text="Home" />
-            <FooterLink text="About Us" />
-            <FooterLink text="Certifications" />
-            <FooterLink text="Contact Us" />
-            <FooterLink text="Privacy Policy" />
-            <FooterLink text="Terms & Conditions" />
+           <FooterLink text="Home" to="/" />
+<FooterLink text="About Us" to="/about" />
+<FooterLink text="Our Products" to="/products" />
+<FooterLink text="Certifications" to="/certifications" />
+<FooterLink text="Contact Us" to="/contact" />
+{/* <FooterLink text="Privacy Policy" to="/privacy-policy" /> */}
+{/* <FooterLink text="Terms & Conditions" to="/terms-conditions" /> */}
           </FooterColumn>
 
           {/* Address */}
@@ -622,7 +625,9 @@ function Accordion({ title, children }) {
       </button>
 
       {open && (
-        <div className="px-4 pb-4 text-sm space-y-2 text-white">
+        
+        <div className="px-4 pb-4 text-sm space-y-2 text-white"
+           onClick={(e) => e.stopPropagation()}>
           {children}
         </div>
       )}
@@ -641,11 +646,16 @@ function FooterColumn({ title, children }) {
   );
 }
 
-function FooterLink({ text }) {
+function FooterLink({ text, to }) {
   return (
-    <li className="hover:text-white hover:translate-x-1 transition cursor-pointer">
+    <li>
+     <Link
+      to={to}
+    className="hover:text-white hover:translate-x-1 transition cursor-pointer text-white">
       {text}
-    </li>
+     
+       </Link>
+       </li>
   );
 }
 

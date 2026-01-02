@@ -1,4 +1,5 @@
 import heroImg from "../assets/img/2.png";
+import { Link } from "react-router-dom";
 
 export default function Hero() {
   return (
@@ -44,9 +45,11 @@ export default function Hero() {
                   </p>
                 </div>
 
-                <button className="mt-6 bg-gray-600 text-primary px-5 py-2 rounded-lg font-medium w-fit hover:bg-gray-800 transition">
+        <Link to="/about">
+                <button className="mt-6 bg-gray-300 text-primary px-5 py-2 rounded-lg font-medium w-fit hover:bg-gray-800 hover:text-white transition">
                   Learn More →
                 </button>
+                </Link>
               </div>
 
               {/* White Cards */}

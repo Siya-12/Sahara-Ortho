@@ -63,7 +63,7 @@ export default function ProductCategory() {
     <p
       className="text-white text-xl font-semibold tracking-wide
       translate-y-4 group-hover:translate-y-0
-      transition duration-500 font-dmserif"
+      transition duration-00 font-dmserif"
       // style={{ fontFamily: "Merriweather, sans-serif" }}
     >
       {item.title}
