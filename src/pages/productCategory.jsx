@@ -4,36 +4,48 @@ import BgScrew from "../assets/img/bg-screw.png";
 import BgNail from "../assets/img/bg-nail.png";
 import BgInstruments from "../assets/img/bg-instruments.png";
 import BgIllizarov from "../assets/img/bg-illizarov.png";
-import Bgjess from "../assets/img/bg-jess.png";
+import Jess from "../assets/img/bg-jess.png";
 import Bgwirespinsrods from "../assets/img/bg-wirerodpin.png";
 import BgSpinal from "../assets/img/bg-spinal.png";
 import BgFacial from "../assets/img/bg-facial.png";
 
 export default function ProductCategory() {
   const { category } = useParams(); 
-  // console.log("CATEGORY FROM URL:", category);
 
 
   const bgMap = {
   "bone-plates": BgPlate,
-  "bone-screws": BgScrew,
+  "bone-screws": BgScrew, 
   "bone-nails": BgNail,
   "instruments": BgInstruments,
   "illizarov": BgIllizarov,
-  "jess": Bgjess,
+  "Jess": Jess,
   "wirerodpin": Bgwirespinsrods,
   "spinal-implants": BgSpinal,
   "maxillofacial": BgFacial,
 };
 
 const categoryBg = bgMap[category];
-// const categoryBg = bgMap[category] || BgJess;
 
   const productData = {
     "bone-plates": [
-      { img: "/products/facial.png", title: "LCP Plates" },
-      { img: "/products/plates/dcp.png", title: "DCP Plates" },
-      { img: "/products/plates/t-plate.png", title: "T Plates" },
+    
+       { img: "/products/plate/nonLocking/small.jpeg", title: "DCP Small Plate" },
+        { img: "/products/plate/nonLocking/narrow.jpeg", title: "DCP Narrow Plate " },
+        { img: "/products/plate/nonLocking/broad.jpeg", title: "DCP Broad Plate" },
+         { img: "/products/plate/nonLocking/oneThird.jpeg", title: "DCP 1/3rd Tubular Plate" },
+           { img: "/products/plate/nonLocking/dhs .jpeg", title: "DCP- DHS Barrel Plate " },
+       { img: "/products/plate/nonLocking/dcs.jpeg", title: "DCP-DCS Barrel Plate " },
+        { img: "/products/plate/nonLocking/stRecon.jpeg", title: "Straight Reconstruction " },
+         { img: "/products/plate/nonLocking/CurveRecon.jpeg", title: "Curved Reconstruction " },
+           { img: "/products/plate/nonLocking/pelvicSt.jpeg", title: "Straight Pelvic Plate " },
+       { img: "/products/plate/nonLocking/pelvicCurved.jpeg", title: "Curve Pelvic Plate " },
+        { img: "/products/plate/nonLocking/dhsPediactrics.jpeg", title: "DCP-DHS Plate (Pediatrics) " },
+         { img: "/products/plate/nonLocking/dcsPediactrics.jpeg", title: "DCP-DCS Plate (Pediatrics) " },
+           { img: "/products/plate/nonLocking/Calcaneal.jpeg", title: "Calcaneal Plate " },
+       { img: "/products/plate/nonLocking/T-small.jpeg", title: "Small T- Plate " },
+        { img: "/products/plate/nonLocking/Tbutress.jpeg", title: "DCP T- Buttress Plate   " },
+         { img: "/products/plate/nonLocking/Toblique.jpeg", title: "T- Oblique Plate  " },
     ],
 
     "bone-nails": [
@@ -59,7 +71,7 @@ const categoryBg = bgMap[category];
     ],
 
     
-    "jess": [
+    "Jess": [
       { img: "/products/screws/cortical.png", title: "Cortical Screws" },
       { img: "/products/screws/cancellous.png", title: "Cancellous Screws" },
     ],
@@ -102,7 +114,7 @@ const categoryBg = bgMap[category];
       </h1>
 
       {/* Cards */}
-      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
         {items.map((item) => (
           <div
             key={item.title}
