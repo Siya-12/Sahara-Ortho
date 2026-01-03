@@ -1,7 +1,19 @@
 import { useParams } from "react-router-dom";
+import BgPlate from "../assets/img/Bg-plate.png";
+import BgScrew from "../assets/img/bg-screw.png";
 
 export default function ProductCategory() {
   const { category } = useParams();
+  // const categoryBg = bgMap[category];
+
+
+  const bgMap = {
+  "bone-plates": BgPlate,
+  "bone-screws": BgScrew,
+};
+
+const categoryBg = bgMap[category];
+
 
   const productData = {
     "bone-plates": [
@@ -24,13 +36,13 @@ export default function ProductCategory() {
   const items = productData[category] || [];
 
   return (
-    <section className="min-h-screen bg-gradient-to-br from-slate-200 to-cyan-100 px-6 py-16">
+    <section className="min-h-screen px-6 py-16 bg-cover bg-no-repeat bg-center" style={{ backgroundImage: `url(${categoryBg})` }}>
 
       {/* Heading */}
       <h1
         className="text-center text-4xl md:text-5xl font-bold mb-14
         bg-clip-text text-transparent font-changa
-        bg-gradient-to-r from-red-800 via-blue-500 to-red-900"
+        bg-gradient-to-r from-gray-400 via-gray-900 to-gray-500"
       >
         {category.replace(/-/g, " ").toUpperCase()}
       </h1>
