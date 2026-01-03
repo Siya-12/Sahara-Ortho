@@ -1,19 +1,33 @@
 import { useParams } from "react-router-dom";
 import BgPlate from "../assets/img/Bg-plate.png";
 import BgScrew from "../assets/img/bg-screw.png";
+import BgNail from "../assets/img/bg-nail.png";
+import BgInstruments from "../assets/img/bg-instruments.png";
+import BgIllizarov from "../assets/img/bg-illizarov.png";
+import Bgjess from "../assets/img/bg-jess.png";
+import Bgwirespinsrods from "../assets/img/bg-wirerodpin.png";
+import BgSpinal from "../assets/img/bg-spinal.png";
+import BgFacial from "../assets/img/bg-facial.png";
 
 export default function ProductCategory() {
-  const { category } = useParams();
-  // const categoryBg = bgMap[category];
+  const { category } = useParams(); 
+  // console.log("CATEGORY FROM URL:", category);
 
 
   const bgMap = {
   "bone-plates": BgPlate,
   "bone-screws": BgScrew,
+  "bone-nails": BgNail,
+  "instruments": BgInstruments,
+  "illizarov": BgIllizarov,
+  "jess": Bgjess,
+  "wirerodpin": Bgwirespinsrods,
+  "spinal-implants": BgSpinal,
+  "maxillofacial": BgFacial,
 };
 
 const categoryBg = bgMap[category];
-
+// const categoryBg = bgMap[category] || BgJess;
 
   const productData = {
     "bone-plates": [
@@ -31,12 +45,52 @@ const categoryBg = bgMap[category];
       { img: "/products/screws/cortical.png", title: "Cortical Screws" },
       { img: "/products/screws/cancellous.png", title: "Cancellous Screws" },
     ],
+
+    
+    "instruments": [
+      { img: "/products/screws/cortical.png", title: "Cortical Screws" },
+      { img: "/products/screws/cancellous.png", title: "Cancellous Screws" },
+    ],
+
+    
+    "illizarov": [
+      { img: "/products/screws/cortical.png", title: "Cortical Screws" },
+      { img: "/products/screws/cancellous.png", title: "Cancellous Screws" },
+    ],
+
+    
+    "jess": [
+      { img: "/products/screws/cortical.png", title: "Cortical Screws" },
+      { img: "/products/screws/cancellous.png", title: "Cancellous Screws" },
+    ],
+
+    
+    "wirerodpin": [
+      { img: "/products/screws/cortical.png", title: "Cortical Screws" },
+      { img: "/products/screws/cancellous.png", title: "Cancellous Screws" },
+    ],
+
+    
+    "spinal-implants": [
+      { img: "/products/screws/cortical.png", title: "Cortical Screws" },
+      { img: "/products/screws/cancellous.png", title: "Cancellous Screws" },
+    ],
+
+    
+    "maxillofacial": [
+      { img: "/products/screws/cortical.png", title: "Cortical Screws" },
+      { img: "/products/screws/cancellous.png", title: "Cancellous Screws" },
+    ],
   };
 
   const items = productData[category] || [];
 
   return (
-    <section className="min-h-screen px-6 py-16 bg-cover bg-no-repeat bg-center" style={{ backgroundImage: `url(${categoryBg})` }}>
+    <section
+  className="min-h-screen px-6 py-16 bg-cover bg-no-repeat bg-center"
+  style={{ backgroundImage: `url(${categoryBg})` }}
+>
+
 
       {/* Heading */}
       <h1
@@ -92,6 +146,7 @@ const categoryBg = bgMap[category];
 
           </div>
         ))}
+      
       </div>
     </section>
   );
