@@ -1,4 +1,4 @@
-import heroImg from "../assets/img/2.png";
+import heroImg from "../assets/img/bg-benzene.png";
 export default function WhyUs()
 {
      const WhyUs = [
@@ -30,13 +30,13 @@ export default function WhyUs()
   ];
 
   return(
-     <section className="min-h-screen bg-gradient-to-br from-blue-100 to-green-100 px-6 py-16" style={{ backgroundImage: `url(${heroImg})`}}>
+     <section className="min-h-screen px-6 py-16 bg-center bg-cover bg-no-repeat" style={{ backgroundImage: `url(${heroImg})`}}>
 
       {/* Heading */}
       <h1
         className="text-center text-4xl md:text-5xl font-bold mb-14
-         bg-clip-text font-changa bg-gradient-to-r from-black-500 via-black-500 to-black-900
-    bg-clip-border"
+         bg-clip-text font-changa bg-gradient-to-r from-gray-600 via-gray-900 to-gray-600
+    bg-clip-border text-transparent"
       > How are we different?
       </h1>
 

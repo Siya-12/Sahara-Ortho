@@ -1,5 +1,6 @@
 import heroImg from "../assets/img/2.png";
 import { Link } from "react-router-dom";
+import brochurePdf from "../assets/brochure.pdf";
 
 export default function Hero() {
   return (
@@ -19,17 +20,44 @@ export default function Hero() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
-            {/* LEFT TEXT */}
-            <div>
-              <h1 className="text-4xl md:text-5xl font-bold text-gray-800 leading-tight">
-               Fixing fractures, Restoring futures
-              </h1>
+           {/* LEFT TEXT */}
+<div className="flex flex-col">
 
-              <p className="mt-6 max-w-xl text-gray-600 text-lg">
-                We provide all kinds of Orthopaedic Implants and Instruments of
-                best quality at reasonable prices since 2005.
-              </p>
-            </div>
+  {/* Brochure Overlay */}
+  <a
+    href={brochurePdf}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="
+      inline-flex w-fit items-center gap-2
+      px-4 py-1 rounded-full
+      bg-white/90 backdrop-blur-md
+      shadow-md
+      text-lg font-semibold text-gray-800
+      hover:bg-gray-800 hover:text-white
+      transition
+self-center lg:self-start
+      order-3 mt-4
+      lg:order-1 lg:mb-4 lg:mt-0
+    "
+  >
+    📄 View Brochure →
+  </a>
+
+  {/* Heading */}
+  <h1 className="text-4xl md:text-5xl font-bold text-gray-800 leading-tight order-1 lg:order-2">
+    Fixing fractures, Restoring futures
+  </h1>
+
+  {/* Paragraph */}
+  <p className="mt-6 max-w-xl text-gray-600 text-lg order-2 lg:order-3">
+    We provide all kinds of Orthopaedic Implants and Instruments of
+    best quality at reasonable prices since 2005.
+  </p>
+
+</div>
+
+
 
             {/* RIGHT CARDS */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
