@@ -5,15 +5,15 @@ export default function ProductRange() {
     {
       title: "Bone Plate",
       desc:
-        "Many patients forget they even have a bone plate—they don’t trigger airport metal detectors and usually cause no sensation once healing is complete.",
+        "Ortho Bone Plate quietly supports the bone from inside, allowing safe and faster healing without external casts.",
       icon: "/icons/bone-screw.png",
       image: "/products/bone-plate.png",
-      link: "/products/bone-screws",
+      link: "/products/bone-plates",
     },
     {
       title: "Bone Screw",
       desc:
-        "Precision-engineered locking screws ensuring enhanced stability and superior clinical outcomes.",
+        "Ortho Bone Screw acts like a strong support pin that keeps broken bones in the right position until they heal.",
       icon: "/icons/locking-screw.png",
       image: "/products/bone-screw.png",
       link: "/products/bone-screws",
@@ -21,58 +21,58 @@ export default function ProductRange() {
     {
       title: "Bone Nail",
       desc:
-        "Durable and anatomically designed bone plates for trauma and reconstructive surgeries.",
+        "Ortho Bone Nail is an internal rod that strengthens a broken bone from the inside while it heals.",
       icon: "/icons/bone-plate.png",
       image: "/products/nail.png",
-      link: "/products/bone-plates",
+      link: "/products/bone-nails",
     },
       {
       title: "Instruments",
       desc:
-        "High-quality bone screws designed for secure fixation and long-term stability in orthopedic procedures.",
+        "Ortho Bone Instruments are the essential tools that allow surgeons to safely and precisely repair broken bones.",
       icon: "/icons/bone-screw.png",
       image: "/products/instruments.png",
-      link: "/products/bone-screws",
+      link: "/products/instruments",
     },
     {
       title: "Illizarov",
       desc:
-        "Precision-engineered locking screws ensuring enhanced stability and superior clinical outcomes.",
+        "Illizarov system helps bones heal, straighten, or grow by slowly guiding them into the correct position from outside the body.",
       icon: "/icons/locking-screw.png",
       image: "/products/illizarov.png",
-      link: "/products/bone-screws",
+      link: "/products/illizarov",
     },
     {
       title: "Jess Systems",
       desc:
-        "Durable and anatomically designed bone plates for trauma and reconstructive surgeries.",
+        "JESS System supports and aligns bones from outside the body while allowing gradual correction and healing.",
       icon: "/icons/bone-plate.png",
       image: "/products/jess.png",
-      link: "/products/bone-plates",
+      link: "/products/Jess-Systems",
     },
       {
       title: "Wires,Pins and Rods",
       desc:
-        "High-quality bone screws designed for secure fixation and long-term stability in orthopedic procedures.",
+        "Wires guide, Pins support, Rods strengthen from inside, and screws lock everything in place.",
       icon: "/icons/bone-screw.png",
       image: "/products/wireRodPin.png",
-      link: "/products/bone-screws",
+      link: "/products/wires-rods-&-pins",
     },
     {
       title: "Spinal Implants",
       desc:
-        "Precision-engineered locking screws ensuring enhanced stability and superior clinical outcomes.",
+        "Spinal Implants act as an internal support system that keeps the spine stable and properly aligned during healing.",
       icon: "/icons/locking-screw.png",
       image: "/products/spinal.png",
-      link: "/products/bone-screws",
+      link: "/products/spinal-implants",
     },
     {
       title: "Maxillofacial",
       desc:
-        "Durable and anatomically designed bone plates for trauma and reconstructive surgeries.",
+        "Maxillofacial Implants help restore the shape, strength, and function of facial bones while ensuring proper healing.",
       icon: "/icons/bone-plate.png",
       image: "/products/facial.png",
-      link: "/products/bone-plates",
+      link: "/products/maxillofacial",
     },
   ];
 

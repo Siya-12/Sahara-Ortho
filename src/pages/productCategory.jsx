@@ -19,8 +19,8 @@ export default function ProductCategory() {
   "bone-nails": BgNail,
   "instruments": BgInstruments,
   "illizarov": BgIllizarov,
-  "Jess": Jess,
-  "wirerodpin": Bgwirespinsrods,
+  "Jess-Systems": Jess,
+  "wires-rods-&-pins": Bgwirespinsrods,
   "spinal-implants": BgSpinal,
   "maxillofacial": BgFacial,
 };
@@ -71,13 +71,13 @@ const categoryBg = bgMap[category];
     ],
 
     
-    "Jess": [
+    "Jess-Systems": [
       { img: "/products/screws/cortical.png", title: "Cortical Screws" },
       { img: "/products/screws/cancellous.png", title: "Cancellous Screws" },
     ],
 
     
-    "wirerodpin": [
+    "wires-rods-&-pins": [
       { img: "/products/screws/cortical.png", title: "Cortical Screws" },
       { img: "/products/screws/cancellous.png", title: "Cancellous Screws" },
     ],
