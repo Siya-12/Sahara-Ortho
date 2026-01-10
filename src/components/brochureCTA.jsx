@@ -3,7 +3,7 @@ export default function BrochureCTA() {
     <section className="w-full bg-gradient-to-r from-teal-600 via-blue-600 to-teal-500
 
 ">
-      <div className="max-w-7xl mx-auto px-6 py-10 flex flex-col md:flex-row items-center justify-between gap-7">
+      <div className="max-w-7xl mx-auto px-6 py-10 flex flex-col md:flex-row items-center justify-between gap-6">
         
         {/* Text */}
         <p className="text-white text-lg md:text-xl font-medium text-center md:text-left">
