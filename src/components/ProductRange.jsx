@@ -6,7 +6,7 @@ export default function ProductRange() {
       title: "Bone Plate",
       desc:
         "Ortho Bone Plate quietly supports the bone from inside, allowing safe and faster healing without external casts.",
-      icon: "/icons/bone-screw.png",
+      icon: "/icons/plate-icon.jpeg",
       image: "/products/bone-plate.png",
       link: "/products/bone-plates",
     },
@@ -14,7 +14,7 @@ export default function ProductRange() {
       title: "Bone Screw",
       desc:
         "Ortho Bone Screw acts like a strong support pin that keeps broken bones in the right position until they heal.",
-      icon: "/icons/locking-screw.png",
+      icon: "/icons/screw-icon.jpeg",
       image: "/products/bone-screw.png",
       link: "/products/bone-screws",
     },
@@ -22,7 +22,7 @@ export default function ProductRange() {
       title: "Bone Nail",
       desc:
         "Ortho Bone Nail is an internal rod that strengthens a broken bone from the inside while it heals.",
-      icon: "/icons/bone-plate.png",
+      icon: "/icons/nail-icon.jpeg",
       image: "/products/nail.png",
       link: "/products/bone-nails",
     },
@@ -30,7 +30,7 @@ export default function ProductRange() {
       title: "Instruments",
       desc:
         "Ortho Bone Instruments are the essential tools that allow surgeons to safely and precisely repair broken bones.",
-      icon: "/icons/bone-screw.png",
+      icon: "/icons/instruments-icon.jpeg",
       image: "/products/instruments.png",
       link: "/products/instruments",
     },
@@ -38,7 +38,7 @@ export default function ProductRange() {
       title: "Illizarov",
       desc:
         "Illizarov system helps bones heal, straighten, or grow by slowly guiding them into the correct position from outside the body.",
-      icon: "/icons/locking-screw.png",
+      icon: "/icons/illizarov-icon.jpeg",
       image: "/products/illizarov.png",
       link: "/products/illizarov",
     },
@@ -46,7 +46,7 @@ export default function ProductRange() {
       title: "Jess Systems",
       desc:
         "JESS System supports and aligns bones from outside the body while allowing gradual correction and healing.",
-      icon: "/icons/bone-plate.png",
+      icon: "/icons/jess-icon.jpeg",
       image: "/products/jess.png",
       link: "/products/Jess-Systems",
     },
@@ -54,7 +54,7 @@ export default function ProductRange() {
       title: "Wires,Pins and Rods",
       desc:
         "Wires guide, Pins support, Rods strengthen from inside, and screws lock everything in place.",
-      icon: "/icons/bone-screw.png",
+      icon: "/icons/plate-icon.jpeg",
       image: "/products/wireRodPin.png",
       link: "/products/wires-rods-&-pins",
     },
@@ -62,7 +62,7 @@ export default function ProductRange() {
       title: "Spinal Implants",
       desc:
         "Spinal Implants act as an internal support system that keeps the spine stable and properly aligned during healing.",
-      icon: "/icons/locking-screw.png",
+      icon: "/icons/locplate-icon.jpeg",
       image: "/products/spinal.png",
       link: "/products/spinal-implants",
     },
@@ -70,7 +70,7 @@ export default function ProductRange() {
       title: "Maxillofacial",
       desc:
         "Maxillofacial Implants help restore the shape, strength, and function of facial bones while ensuring proper healing.",
-      icon: "/icons/bone-plate.png",
+      icon: "/icons/maxillofacial-icon.jpeg",
       image: "/products/facial.png",
       link: "/products/maxillofacial",
     },
@@ -105,15 +105,17 @@ export default function ProductRange() {
             "
           >
             {/* Icon */}
+
             <div className="flex-shrink-0">
-              <div className="w-14 h-14 rounded-full bg-blue-50 flex items-center justify-center">
-                <img
-                  src={item.icon}
-                  alt={item.title}
-                  className="w-8 h-8 object-contain"
-                />
-              </div>
-            </div>
+  <div className="w-14 h-14 rounded-full bg-white-50 p-2 flex items-center justify-center overflow-hidden">
+    <img
+      src={item.icon}
+      alt={item.title}
+      className="w-full h-full object-contain scale-150"
+    />
+  </div>
+</div>
+
 
             {/* Text */}
             <div className="flex-1">
