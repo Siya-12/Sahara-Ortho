@@ -54,7 +54,7 @@ export default function ProductRange() {
       title: "Wires,Pins and Rods",
       desc:
         "Wires guide, Pins support, Rods strengthen from inside, and screws lock everything in place.",
-      icon: "/icons/plate-icon.jpeg",
+      icon: "/icons/wpr-icon.jpeg",
       image: "/products/wireRodPin.png",
       link: "/products/wires-rods-&-pins",
     },
@@ -62,7 +62,7 @@ export default function ProductRange() {
       title: "Spinal Implants",
       desc:
         "Spinal Implants act as an internal support system that keeps the spine stable and properly aligned during healing.",
-      icon: "/icons/locplate-icon.jpeg",
+      icon: "/icons/spinal-icon.jpeg",
       image: "/products/spinal.png",
       link: "/products/spinal-implants",
     },
