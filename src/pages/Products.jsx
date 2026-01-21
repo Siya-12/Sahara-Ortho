@@ -1,46 +1,59 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import ProductBg from "../assets/img/bg-product.png"
 
 export default function Products() {
+   const { category } = useParams(); 
   const products = [
     {
       img: "/products/bone-plate.png",
       title: "Bone Plates",
+      slug: "bone-plates",
     },
     {
       img: "/products/nail.png",
       title: "Bone Nails",
+      slug: "bone-nails",
     },
     {
       img: "/products/bone-screw.png",
       title: "Bone Screws",
+      slug: "bone-screws",
     },
     {
       img: "/products/instruments.png",
       title: "Instruments",
+      slug: "instruments",
     },
     {
       img: "/products/illizarov.png",
       title: "Illizarov",
+      slug: "illizarov",
     },
     {
       img: "/products/jess.png",
       title: "Jess Systems",
+      slug: "jess-systems",
     },
     {
       img: "/products/wireRodPin.png",
       title: "Wires,Pins & Rods",
+      slug: "wires-pins-rods",
     },
     {
       img: "/products/spinal.png",
       title: "Spinal Implants",
+      slug: "spinal-implants",
     },
     {
       img: "/products/facial.png",
       title: "Maxillofacial",
+      slug: "maxillofacial",
     },
   ];
   const navigate = useNavigate();
+  const filteredProducts = category
+  ? products.filter((p) => p.slug === category)
+  : products;
   return (
     <section className="min-h-[60vh] md:min-h-screen px-6 py-8 md:py-16 bg-cover bg-no-repeat md:bg-center md:bg-cover md:bg-no-repeat" style={{backgroundImage:`url(${ProductBg})`}}>
       
@@ -56,11 +69,11 @@ export default function Products() {
 
       {/* Cards */}
       <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-3 gap-8">
-        {products.map((cert) => (
+        {filteredProducts.map((cert) => (
           <div
             key={cert.title}
             onClick={() =>
-  navigate(`/products/${cert.title.toLowerCase().replace(/\s/g, "-")}`)
+  navigate(`/products/${cert.slug.toLowerCase().replace(/\s/g, "-")}`)
 }
 
             className="bg-white rounded-2xl shadow-lg hover:shadow-2xl
