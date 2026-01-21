@@ -1,65 +1,54 @@
-import { useMemo } from "react";
+import { useEffect, useState } from "react";
+import funBg from "../assets/img/bg-fun.png";
 
-export default function FunFacts() {
-  const facts = [
-    '🦴 "Maxillofacial implants are so tiny that they fix facial bones without changing your smile."',
+const facts = [
+  "✈️ Most orthopaedic implants don’t trigger airport metal detectors.",
+  "🦴 Maxillofacial implants are tiny yet incredibly precise.",
+  "🔨 Yes, orthopaedic surgeons really use hammers.",
+  "🧠 Spinal implants act like a GPS system for your backbone.",
+  "🦾 Orthopaedic patients often become accidental cyborgs.",
+  "🦴 Bones heal stronger after implants.",
+  "🛠️ The Ilizarov system helps bones grow longer.",
+];
 
-    '🧠 "Spinal implants act like a GPS system for your backbone — guiding it while it heals."',
+export default function FunFactsCarousel() {
+  const [index, setIndex] = useState(0);
 
-    '🔩 "Wires, pins, and rods may look simple, but they do some of the toughest jobs in fracture care."',
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % facts.length);
+    }, 2500); // 2.5 second
 
-    '🛠️ "The Ilizarov system can actually help bones grow longer — your body literally regenerates bone."',
-
-    '🤖 "Orthopaedic patients often become accidental cyborgs — part human, part hardware."',
-
-    '🦾 "Bones heal stronger after implants — they believe in comebacks."',
-
-    '✈️ "Most orthopaedic implants don’t trigger airport metal detectors — sorry, no cool story."',
-
-    '🔨 "Yes, orthopaedic surgeons really use hammers — because bones don’t listen politely."'
-  ];
-
-  // Shuffle facts randomly on each render
-  const shuffledFacts = useMemo(() => {
-    return [...facts].sort(() => Math.random() - 0.5);
+    return () => clearInterval(interval);
   }, []);
 
   return (
-    <section className="bg-slate-50 py-14 px-6">
-      
-      {/* Heading */}
-      <div className="text-center mb-10">
-        <h2 className="text-2xl md:text-4xl font-bold text-gray-900 font-changa">
-          Fun Facts
-        </h2>
-        <p className="mt-3 text-gray-600 max-w-2xl mx-auto">
-          Because even serious science has a fun side.
-        </p>
-      </div>
+    <section className="py-10 text-center overflow-hidden bg-cover bg-no-repeat bg-center"style={{backgroundImage:`url(${funBg})`}}>
+      <h2 className="text-center text-4xl md:text-5xl font-bold mb-2
+         bg-clip-text font-changa bg-gradient-to-r from-gray-600 via-gray-900 to-gray-600
+    bg-clip-border text-transparent">Fun Facts</h2>
+      <p className="text-gray-500 mb-8">
+        Because even serious science has a fun side.
+      </p>
 
-      {/* Facts Grid */}
-      <div className="max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {shuffledFacts.map((fact, index) => (
-          <div
-            key={index}
-            className="
-              bg-white
-              rounded-2xl
-              p-6
-              shadow-md
-              hover:shadow-lg
-              transition
-              text-center
-              text-gray-700
-              font-medium
-              leading-relaxed
-            "
-          >
-            {fact}
-          </div>
-        ))}
+      {/* Carousel container */}
+      <div className="relative w-full max-w-4xl mx-auto overflow-hidden">
+        <div
+          className="flex transition-transform duration-700 ease-in-out"
+          style={{ transform: `translateX(-${index * 100}%)` }}
+        >
+          {facts.map((fact, i) => (
+            <div
+              key={i}
+              className="min-w-full flex-col justify-center"
+            >
+              <p className="text-xl text-gray-800 font-medium tracking-wide">
+                {fact}
+              </p>
+            </div>
+          ))}
+        </div>
       </div>
-
     </section>
   );
 }

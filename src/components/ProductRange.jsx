@@ -80,7 +80,7 @@ export default function ProductRange() {
     <section className="bg-slate-50 py-16 px-6">
       {/* Header */}
       <div className="text-center max-w-3xl mx-auto mb-14">
-        <h2 className=" mt-2 text-center text-4xl md:text-5xl font-bold
+        <h2 className="mt-2 text-center text-4xl md:text-5xl font-bold
          bg-clip-text font-changa bg-gradient-to-r from-gray-600 via-gray-900 to-gray-600
     bg-clip-border text-transparent">
           Our Product Range
@@ -105,7 +105,6 @@ export default function ProductRange() {
             "
           >
             {/* Icon */}
-
             <div className="flex-shrink-0">
   <div className="w-14 h-14 rounded-full bg-white-50 p-2 flex items-center justify-center overflow-hidden">
     <img
@@ -115,8 +114,6 @@ export default function ProductRange() {
     />
   </div>
 </div>
-
-
             {/* Text */}
             <div className="flex-1">
               <h3 className="text-xl font-bold text-gray-900">
@@ -140,8 +137,6 @@ export default function ProductRange() {
     "
   />
 </div>
-
-
 
             {/* CTA */}
             <div className="w-full md:w-auto">

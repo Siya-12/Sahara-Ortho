@@ -161,7 +161,7 @@ Delhi-110089
 
       {/* Bottom Bar */}
       <div className="border-t border-red-300 text-center text-xs py-3">
-        © 2025 Sahara Ortho. All Rights Reserved.
+        © 2026 Sahara Ortho. All Rights Reserved.
       </div>
     </footer>
   );
