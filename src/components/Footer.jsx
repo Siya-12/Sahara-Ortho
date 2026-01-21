@@ -121,7 +121,7 @@ Delhi-110089
 
           {/* Products */}
           <FooterColumn title="Our Products">
-            <FooterLink text="Bone Plates" />
+            <FooterLink text="Bone Plates" to="/products/productCategory"/>
             <FooterLink text="Bone Nails" />
             <FooterLink text="Bone Screws" />
             <FooterLink text="Instruments" />
@@ -134,11 +134,11 @@ Delhi-110089
 
           {/* Links */}
           <FooterColumn title="Quick Links">
-           <FooterLink text="Home" to="/" />
-<FooterLink text="About Us" to="/about" />
-<FooterLink text="Our Products" to="/products" />
-<FooterLink text="Certifications" to="/certifications" />
-<FooterLink text="Contact Us" to="/contact" />
+          <FooterLink text="Home" to="/" />
+          <FooterLink text="About Us" to="/about" />
+          <FooterLink text="Our Products" to="/products" />
+          <FooterLink text="Certifications" to="/certifications" />
+          <FooterLink text="Contact Us" to="/contact" />
 {/* <FooterLink text="Privacy Policy" to="/privacy-policy" /> */}
 {/* <FooterLink text="Terms & Conditions" to="/terms-conditions" /> */}
           </FooterColumn>

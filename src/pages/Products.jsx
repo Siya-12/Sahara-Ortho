@@ -38,9 +38,11 @@ export default function Products() {
     {
       img: "/products/facial.png",
       title: "Maxillofacial",
+      
     },
   ];
   const navigate = useNavigate();
+
   return (
     <section className="min-h-[60vh] md:min-h-screen px-6 py-8 md:py-16 bg-cover bg-no-repeat md:bg-center md:bg-cover md:bg-no-repeat" style={{backgroundImage:`url(${ProductBg})`}}>
       
