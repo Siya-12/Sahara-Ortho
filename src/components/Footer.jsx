@@ -121,15 +121,15 @@ Delhi-110089
 
           {/* Products */}
           <FooterColumn title="Our Products">
-            <FooterLink text="Bone Plates" to="/products/productCategory"/>
-            <FooterLink text="Bone Nails" />
-            <FooterLink text="Bone Screws" />
-            <FooterLink text="Instruments" />
-            <FooterLink text="Illizarov" />
-            <FooterLink text="Jess Systems" />
-            <FooterLink text="Wires, Pins and Rods" />
-            <FooterLink text="Spinal Implants" />
-            <FooterLink text="Maxillofacial" />
+           <FooterLink text="Bone Plates" to="/products/bone-plates" />
+  <FooterLink text="Bone Nails" to="/products/bone-nails" />
+  <FooterLink text="Bone Screws" to="/products/bone-screws" />
+  <FooterLink text="Instruments" to="/products/instruments" />
+  <FooterLink text="Illizarov" to="/products/illizarov" />
+  <FooterLink text="Jess Systems" to="/products/jess-systems" />
+  <FooterLink text="Wires, Pins and Rods" to="/products/wires-pins-rods" />
+  <FooterLink text="Spinal Implants" to="/products/spinal-implants" />
+  <FooterLink text="Maxillofacial" to="/products/maxillofacial" />
           </FooterColumn>
 
           {/* Links */}
