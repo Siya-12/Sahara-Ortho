@@ -4,7 +4,7 @@ export default function Certification() {
   const certificates = [
     {
       img: "../src/assets/img/certificates/iso.jpg",
-      title: "ISO 13485 Certification of Compliance",
+      title: "ISO 13485 Certification of Compliances",
     },
     {
       img: "../src/assets/img/certificates/ce.jpg",
