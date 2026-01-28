@@ -14,6 +14,7 @@ function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
+     <div className="sticky top-0 z-50">
       <Routes>
         <Route
           path="/"
@@ -64,6 +65,7 @@ function App() {
           }
         />
       </Routes>
+      </div>
     </BrowserRouter>
   );
 }

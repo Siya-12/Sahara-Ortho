@@ -1,6 +1,6 @@
 export default function TopBar() {
   return (
-    <div className="bg-gradient-to-br from-blue-600 via-blue-900 to-blue-400 text-white text-sm">
+    <div className="bg-gradient-to-br from-blue-600 via-blue-900 to-blue-400 text-white text-sm fixed top-0 left-0 w-full z-50">
       <div className="w-full px-6 lg:px-10 py-2">
 
         {/* ================= DESKTOP / TABLET (UNCHANGED) ================= */}

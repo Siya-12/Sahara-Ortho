@@ -3,10 +3,29 @@ import logo from "../assets/img/logo.jpg";
 import { Link, useLocation } from "react-router-dom";
 import BusinessEnquiryModal from "../components/BusinessEnquiryModal";
 
+
+
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [openEnquiry, setOpenEnquiry] = useState(false);
   const location = useLocation();
+  const [mobileProductsOpen, setMobileProductsOpen] = useState(false);
+  const [activeMobileProduct, setActiveMobileProduct] = useState(null);
+
+const productsMenu = [
+  {
+    name: "Trauma Implants",
+    subsections: ["Plates", "Screws", "Nails"],
+  },
+  {
+    name: "Spine Products",
+    subsections: ["Pedicle Screws", "Rods", "Cages"],
+  },
+  {
+    name: "Arthroplasty",
+    subsections: ["Hip", "Knee", "Shoulder"],
+  },
+];
 
   const isActive = (path) =>
     location.pathname === path
@@ -15,7 +34,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="bg-white shadow relative z-40">
+      <nav className="bg-white shadow fixed top-[40px] z-40 left-0 w-full">
         {/* Main bar */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
 
@@ -37,9 +56,47 @@ export default function Navbar() {
               <li className={isActive("/about")}>
                 <Link to="/about">About</Link>
               </li>
-              <li className={isActive("/products")}>
-                <Link to="/products">Products</Link>
-              </li>
+
+
+              {/* product dropdown  */}
+              <li className="relative group">
+  <Link
+  to="/products"
+  className="cursor-pointer hover:text-blue"
+>
+  Products
+</Link>
+
+  {/* First level dropdown */}
+  <div className="absolute left-0 top-full hidden group-hover:block bg-white shadow-lg rounded-lg min-w-[220px] z-50">
+    <ul className="py-2">
+      {productsMenu.map((product, idx) => (
+        <li key={idx} className="relative group/item">
+          <div className="flex justify-between items-center px-4 py-2 hover:bg-gray-100 cursor-pointer whitespace-nowrap">
+            {product.name}
+            <span>›</span>
+          </div>
+
+          {/* Second level dropdown */}
+          <div className="absolute left-full top-0 hidden group-hover/item:block bg-white shadow-lg rounded-lg min-w-[200px]">
+            <ul className="py-2">
+              {product.subsections.map((sub, i) => (
+                <Link
+                  key={i}
+                  to={`/products/${product.name}/${sub}`}
+                  className="block px-4 py-2 hover:bg-gray-100 whitespace-nowrap"
+                >
+                  {sub}
+                </Link>
+              ))}
+            </ul>
+          </div>
+        </li>
+      ))}
+    </ul>
+  </div>
+</li>
+
               <li className={isActive("/certifications")}>
                 <Link to="/certifications">Certifications</Link>
               </li>
@@ -61,7 +118,9 @@ export default function Navbar() {
 
           {/* Mobile Hamburger */}
           <button
-            onClick={() => setOpen(!open)}
+            onClick={() => {setOpen(!open); 
+              setMobileProductsOpen(false);
+              setActiveMobileProduct(null);}}
             className="md:hidden text-2xl text-gray-700 bg-white"
           >
             ☰
@@ -78,9 +137,58 @@ export default function Navbar() {
               <li>
                 <Link to="/about" onClick={() => setOpen(false)}>About</Link>
               </li>
-              <li>
-                <Link to="/products" onClick={() => setOpen(false)}>Products</Link>
-              </li>
+
+              {/* products dropdown  */}
+             <li>
+  <button
+    onClick={() => setMobileProductsOpen(!mobileProductsOpen)}
+    className="w-full flex justify-between items-center"
+  >
+    Products
+    <span>{mobileProductsOpen ? "−" : "+"}</span>
+  </button>
+
+  {mobileProductsOpen && (
+    <ul className="mt-2 ml-4 space-y-2">
+      {productsMenu.map((product, idx) => (
+        <li key={idx}>
+          <button
+            onClick={() =>
+              setActiveMobileProduct(
+                activeMobileProduct === idx ? null : idx
+              )
+            }
+            className="w-full flex justify-between items-center"
+          >
+            {product.name}
+            <span>{activeMobileProduct === idx ? "−" : "+"}</span>
+          </button>
+
+          {activeMobileProduct === idx && (
+            <ul className="ml-4 mt-2 space-y-1">
+              {product.subsections.map((sub, i) => (
+                <li key={i}>
+                  <Link
+                    to={`/products/${product.name}/${sub}`}
+                    onClick={() => {
+                      setOpen(false);
+                      setMobileProductsOpen(false);
+                      setActiveMobileProduct(null);
+                    }}
+                    className="block py-1"
+                  >
+                    {sub}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          )}
+        </li>
+      ))}
+    </ul>
+  )}
+</li>
+
               <li>
                 <Link to="/certifications" onClick={() => setOpen(false)}>Certifications</Link>
               </li>

@@ -10,7 +10,7 @@ const MainLayout = ({ children }) => {
       <Topbar />
       <Navbar />
       
-      <main className="min-h-screen">
+      <main className="pt-[75px]">
         {children}
          <Outlet />
       </main>
