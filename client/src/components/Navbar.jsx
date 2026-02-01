@@ -3,8 +3,6 @@ import logo from "../assets/img/logo.jpg";
 import { Link, useLocation } from "react-router-dom";
 import BusinessEnquiryModal from "../components/BusinessEnquiryModal";
 
-
-
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [openEnquiry, setOpenEnquiry] = useState(false);
@@ -56,8 +54,6 @@ const productsMenu = [
               <li className={isActive("/about")}>
                 <Link to="/about">About</Link>
               </li>
-
-
               {/* product dropdown  */}
               <li className="relative group">
   <Link
