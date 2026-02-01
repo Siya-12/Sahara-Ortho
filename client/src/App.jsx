@@ -7,6 +7,7 @@ import Certificates from "./pages/Certificates";
 import ContactUs from "./pages/ContactUs";
 import ProductCategory from "./pages/ProductCategory";
 import ScrollToTop from "./components/ScrollToTop";
+import Login from "./pages/Login";
 // import RoutesComponent from "./RoutesComponent"; // or your Routes
 
 
@@ -64,6 +65,14 @@ function App() {
             </MainLayout>
           }
         />
+
+  
+        <Route
+         path="/login"
+          element={ <MainLayout>
+              <Login />
+            </MainLayout>} />
+
       </Routes>
       </div>
     </BrowserRouter>

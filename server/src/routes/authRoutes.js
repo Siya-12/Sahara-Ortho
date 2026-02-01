@@ -1,8 +1,9 @@
 import express from "express";
-import { testAuth } from "../controllers/authController.js";
+import { firebaseLogin } from "../controllers/authController.js";
 
 const router = express.Router();
 
-router.get("/test", testAuth);
+// Firebase login (Google / Phone)
+router.post("/login", firebaseLogin);
 
 export default router;

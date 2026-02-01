@@ -12,16 +12,40 @@ export default function Navbar() {
 
 const productsMenu = [
   {
-    name: "Trauma Implants",
+    name: "Bone Plates",
     subsections: ["Plates", "Screws", "Nails"],
   },
   {
-    name: "Spine Products",
+    name: "Bone Nails",
     subsections: ["Pedicle Screws", "Rods", "Cages"],
   },
   {
-    name: "Arthroplasty",
+    name: "Bone Screws",
     subsections: ["Hip", "Knee", "Shoulder"],
+  },
+  {
+    name: "Instruments",
+    subsections: ["Plates", "Screws", "Nails"],
+  },
+  {
+    name: "Illizarov",
+    subsections: ["Plates", "Screws", "Nails"],
+  },
+   {
+    name: "Jess Systems",
+    subsections: ["Pedicle Screws", "Rods", "Cages"],
+  },
+  {
+    name: "Wires,Pins & Rods",
+    subsections: ["Hip", "Knee", "Shoulder"],
+  },
+  {
+    name: "Spinal Implants",
+    subsections: ["Plates", "Screws", "Nails"],
+  },
+  {
+    name: "Maxillofacial",
+    subsections: ["Plates", "Screws", "Nails"],
   },
 ];
 
@@ -100,7 +124,7 @@ const productsMenu = [
                 <Link to="/contact">Contact Us</Link>
               </li>
               <li className={isActive("/login")}>
-                <Link to="/login">Login/Signup</Link>
+                <Link to="/login">Login</Link>
               </li>
             </ul>
 
