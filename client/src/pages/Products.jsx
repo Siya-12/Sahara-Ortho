@@ -1,5 +1,7 @@
 import { useNavigate, useParams } from "react-router-dom";
-import ProductBg from "../assets/img/bg-product.png"
+import ProductBg from "../assets/img/bg-product.png";
+import { useAuth } from "../context/AuthContext";
+
 
 export default function Products() {
    const { category } = useParams(); 
@@ -51,6 +53,16 @@ export default function Products() {
     },
   ];
   const navigate = useNavigate();
+  const { isAuthenticated } = useAuth();
+
+  const handleBuy = () => {
+  if (!isAuthenticated) {
+    navigate("/login");
+  } else {
+    navigate("/cart");
+  }
+};
+
   const filteredProducts = category
   ? products.filter((p) => p.slug === category)
   : products;

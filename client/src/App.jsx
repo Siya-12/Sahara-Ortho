@@ -8,7 +8,15 @@ import ContactUs from "./pages/ContactUs";
 import ProductCategory from "./pages/ProductCategory";
 import ScrollToTop from "./components/ScrollToTop";
 import Login from "./pages/Login";
-// import RoutesComponent from "./RoutesComponent"; // or your Routes
+
+import Cart from "./pages/Cart";
+import Checkout from "./pages/Checkout";
+import ProtectedRoute from "./routes/ProtectedRoute";
+
+import AccountLayout from "./pages/account/AccountLayout";
+import Profile from "./pages/account/Profile";
+import Orders from "./pages/account/Orders";
+import Addresses from "./pages/account/Addresses";
 
 
 function App() {
@@ -43,10 +51,16 @@ function App() {
           }
         /> */}
 
-        <Route element={<MainLayout />}>
-          <Route path="/products" element={<Products />} />
-          <Route path="/products/:category" element={<ProductCategory />} />
-        </Route>
+         <Route
+        element={
+          <ProtectedRoute>
+            <MainLayout />
+          </ProtectedRoute>
+        }
+      >
+        <Route path="/products" element={<Products />} />
+        <Route path="/products/:category" element={<ProductCategory />} />
+      </Route>
 
         <Route
           path="/certifications"
@@ -71,7 +85,43 @@ function App() {
          path="/login"
           element={ <MainLayout>
               <Login />
-            </MainLayout>} />
+            </MainLayout>} 
+            />
+
+             {/* 🔐 USER DASHBOARD */}
+      <Route
+        path="/account"
+        element={
+          <MainLayout>
+          <ProtectedRoute>
+            <AccountLayout />
+          </ProtectedRoute>
+          </MainLayout>
+        }
+      >
+        <Route index element={<Profile />} />
+        <Route path="orders" element={<Orders />} />
+        <Route path="addresses" element={<Addresses />} />
+      </Route>
+
+
+        <Route
+          path="/cart"
+          element={
+            <ProtectedRoute>
+              <Cart />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/checkout"
+          element={
+            <ProtectedRoute>
+              <Checkout />
+            </ProtectedRoute>
+          }
+        />
 
       </Routes>
       </div>

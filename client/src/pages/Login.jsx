@@ -2,21 +2,22 @@ import { useState } from "react";
 import {
   GoogleAuthProvider,
   signInWithPopup,
-  RecaptchaVerifier,
-  signInWithPhoneNumber,
+  signInWithEmailAndPassword,
+  createUserWithEmailAndPassword,
 } from "firebase/auth";
 
 import { auth } from "../firebase";
+import { useAuth } from "../context/AuthContext";
+import { useNavigate } from "react-router-dom";
 
-import Topbar from "../components/Topbar";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 
 export default function Login() {
-  const [phone, setPhone] = useState("");
-  const [otp, setOtp] = useState("");
-  const [confirmationResult, setConfirmationResult] = useState(null);
-  const [loading, setLoading] = useState(false);
+  const [email, setEmail] = useState("");
+ const [password, setPassword] = useState("");
+ const [isSignup, setIsSignup] = useState(false);
+  const { login } = useAuth();
+  const navigate = useNavigate();
+
 
   /* ---------------- GOOGLE LOGIN ---------------- */
  const handleGoogleLogin = async () => {
@@ -39,7 +40,9 @@ export default function Login() {
     const data = await res.json();
 
     // 👉 SAVE JWT
-    localStorage.setItem("token", data.token);
+    login(data.token);
+navigate("/account");
+
 
     alert("Login successful ✅");
     // navigate("/dashboard") → later
@@ -49,72 +52,40 @@ export default function Login() {
   }
 };
 
-  /* ---------------- PHONE OTP ---------------- */
-  const setupRecaptcha = () => {
-    if (!window.recaptchaVerifier) {
-      window.recaptchaVerifier = new RecaptchaVerifier(
-        auth,
-        "recaptcha-container",
-        { size: "invisible" }
-      );
-    }
-  };
-
-  const sendOtp = async () => {
-    if (!phone) return alert("Enter phone number");
-
-    try {
-      setLoading(true);
-      setupRecaptcha();
-      const appVerifier = window.recaptchaVerifier;
-
-      const result = await signInWithPhoneNumber(
-        auth,
-        `+91${phone}`,
-        appVerifier
-      );
-
-      setConfirmationResult(result);
-      alert("OTP sent successfully 📩");
-    } catch (error) {
-      console.error(error);
-      alert(error.message);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const verifyOtp = async () => {
-  if (!otp) return alert("Enter OTP");
-
+ /* ---------------- EMAIL/PASSWORD LOGIN ---------------- */
+const handleEmailAuth = async () => {
   try {
-    setLoading(true);
+    let userCredential;
 
-    const result = await confirmationResult.confirm(otp);
+    if (isSignup) {
+      userCredential = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+    } else {
+      userCredential = await signInWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+    }
 
-    // 🔑 Firebase ID token
-    const token = await result.user.getIdToken();
+    const token = await userCredential.user.getIdToken();
 
-    // 👉 SEND TOKEN TO BACKEND
+    // 👉 Send token to backend
     const res = await fetch("http://localhost:5000/api/auth/login", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ token }),
     });
 
     const data = await res.json();
 
-    // 👉 SAVE JWT
-    localStorage.setItem("token", data.token);
-
-    alert("Login successful ✅");
+    login(data.token);
+    navigate("/account");
   } catch (error) {
-    console.error(error);
-    alert("Invalid OTP");
-  } finally {
-    setLoading(false);
+    alert(error.message);
   }
 };
 
@@ -154,46 +125,41 @@ export default function Login() {
             <div className="flex-grow border-t" />
           </div>
 
-          {/* PHONE LOGIN */}
-          {!confirmationResult ? (
-            <>
-              <input
-                type="tel"
-                placeholder="Enter phone number"
-                className="w-full border px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
-              />
+          {/* EMAIL/PASSWORD LOGIN */}
+         <input
+  type="email"
+  placeholder="Enter email"
+  value={email}
+  onChange={(e) => setEmail(e.target.value)}
+  className="w-full border px-4 py-3 rounded-lg"
+/>
 
-              <button
-                onClick={sendOtp}
-                disabled={loading}
-                className="mt-4 w-full bg-blue-700 text-white py-3 rounded-lg hover:bg-blue-800 transition"
-              >
-                {loading ? "Sending OTP..." : "Continue with Phone"}
-              </button>
-            </>
-          ) : (
-            <>
-              <input
-                type="number"
-                placeholder="Enter OTP"
-                className="w-full border px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
-                value={otp}
-                onChange={(e) => setOtp(e.target.value)}
-              />
+<input
+  type="password"
+  placeholder="Enter password"
+  value={password}
+  onChange={(e) => setPassword(e.target.value)}
+  className="w-full border px-4 py-3 rounded-lg mt-3"
+/>
 
-              <button
-                onClick={verifyOtp}
-                disabled={loading}
-                className="mt-4 w-full bg-green-600 text-white py-3 rounded-lg hover:bg-green-700 transition"
-              >
-                {loading ? "Verifying..." : "Verify OTP"}
-              </button>
-            </>
-          )}
+<button
+  onClick={handleEmailAuth}
+  className="mt-4 w-full bg-blue-700 text-white py-3 rounded-lg"
+>
+  {isSignup ? "Create Account" : "Login"}
+</button>
 
-          <div id="recaptcha-container"></div>
+<p
+  className="text-sm text-center mt-4 text-blue-600 cursor-pointer"
+  onClick={() => setIsSignup(!isSignup)}
+>
+  {isSignup
+    ? "Already have an account? Login"
+    : "New user? Create an account"}
+</p>
+
+
+
 
           <p className="text-xs text-gray-400 mt-6 text-center">
             By continuing, you agree to Sahara Ortho’s Terms & Privacy Policy
